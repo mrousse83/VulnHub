@@ -49,3 +49,12 @@ Je constate qu'il y a 3 ports ouverts :
 * 80/tcp (http) : Apache httpd 2.4.51 ((Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9)
 * 443/tcp (ssl/http) : Apache httpd 2.4.51 ((Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9)
 
+Le certificat SSL contient également deux noms DNS :
+* earth.local
+* terratest.earth.local
+
+J'aoutes ces deux noms DNS dans mon fichier ```/etc/hosts``` :
+```
+192.168.56.102 earth.local terratest.earth.local
+```
+
