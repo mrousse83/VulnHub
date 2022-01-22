@@ -14,6 +14,32 @@ Je commence ma recherche afin de trouver un point d'entrée.
 
 #### Recherche avec nmap
 Je lance une analyse avec la commande ```nmap -e eth1 -A -p- -T4 192.168.56.102``` :
-```console
+```
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-01-22 06:13 EST
+Nmap scan report for 192.168.56.102
+Host is up (0.00057s latency).
+Not shown: 65371 filtered tcp ports (no-response), 161 filtered tcp ports (host-unreach)
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 8.6 (protocol 2.0)
+| ssh-hostkey: 
+|   256 5b:2c:3f:dc:8b:76:e9:21:7b:d0:56:24:df:be:e9:a8 (ECDSA)
+|_  256 b0:3c:72:3b:72:21:26:ce:3a:84:e8:41:ec:c8:f8:41 (ED25519)
+80/tcp  open  http     Apache httpd 2.4.51 ((Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9)
+|_http-title: Bad Request (400)
+|_http-server-header: Apache/2.4.51 (Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9
+443/tcp open  ssl/http Apache httpd 2.4.51 ((Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9)
+|_http-title: Test Page for the HTTP Server on Fedora
+| http-methods: 
+|_  Potentially risky methods: TRACE
+| ssl-cert: Subject: commonName=earth.local/stateOrProvinceName=Space
+| Subject Alternative Name: DNS:earth.local, DNS:terratest.earth.local
+| Not valid before: 2021-10-12T23:26:31
+|_Not valid after:  2031-10-10T23:26:31
+|_http-server-header: Apache/2.4.51 (Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|_  http/1.1
 
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 187.23 seconds
 ```
