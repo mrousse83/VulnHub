@@ -53,7 +53,7 @@ Le certificat SSL contient également deux noms DNS :
 * earth.local
 * terratest.earth.local
 
-J'aoutes ces deux noms DNS dans mon fichier ```/etc/hosts``` :
+J'ajoute ces deux noms DNS dans mon fichier ```/etc/hosts``` :
 ```
 192.168.56.102 earth.local terratest.earth.local
 ```
