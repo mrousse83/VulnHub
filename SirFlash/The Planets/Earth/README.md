@@ -43,3 +43,9 @@ PORT    STATE SERVICE  VERSION
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 187.23 seconds
 ```
+
+Je constate qu'il y a 3 ports ouverts :
+* 22/tcp (ssh) : OpenSSH 8.6 (protocol 2.0)
+* 80/tcp (http) : Apache httpd 2.4.51 ((Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9)
+* 443/tcp (ssl/http) : Apache httpd 2.4.51 ((Fedora) OpenSSL/1.1.1l mod_wsgi/4.7.1 Python/3.9)
+
