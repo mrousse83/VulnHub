@@ -1,7 +1,11 @@
 
 # The Planets : Earth par SirFlash
 
-Je commence par rechercher l'adresse IP de ma VM avec la commande suiavnte :  
+Sur cette machine décrite comme facile, il faut trouver un flag user et un flag root qui contiennent chacun un hash MD5.
+
+## Analyse
+
+Je commence par rechercher l'adresse IP de la VM avec la commande suivante :
 ```console
 ┌──(kali㉿kali)-[~]
 └─$ sudo netdiscover -i eth1 -r 192.168.56.0/24
@@ -19,7 +23,5 @@ Elle me donne le résultat suivant :
  192.168.56.100  08:00:27:9a:b9:05      1      60  PCS Systemtechnik GmbH
  192.168.56.102  08:00:27:e5:4c:fe      1      60  PCS Systemtechnik GmbH
 ```
-Ces adresses correspondent à :
-- 192.168.56.100 : Kali 2021.4a
-- 192.168.56.102 : Earth
+L'adresse de la VM est donc : 192.168.56.102
 
