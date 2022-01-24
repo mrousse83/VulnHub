@@ -58,3 +58,38 @@ J'ajoute ces deux noms DNS dans mon fichier ```/etc/hosts``` :
 192.168.56.102 earth.local terratest.earth.local
 ```
 
+### Analyse du port 80 et 443
+Je lance un ```dirb http://earth.local``` et un ```dirb https://earth.local``` qui me permet de trouver la page ```https://earth.local/admin``` qui contient un lien vers la page ```http://earth.local/admin/login```.
+Puis un ```dirb http://terratest.earth.local``` et un ```dirb https://terratest.earth.local``` qui me permet de trouver le fichier ```https://terratest.earth.local/robots.txt``` qui contient :
+```
+User-Agent: *
+Disallow: /*.asp
+Disallow: /*.aspx
+Disallow: /*.bat
+Disallow: /*.c
+Disallow: /*.cfm
+Disallow: /*.cgi
+Disallow: /*.com
+Disallow: /*.dll
+Disallow: /*.exe
+Disallow: /*.htm
+Disallow: /*.html
+Disallow: /*.inc
+Disallow: /*.jhtml
+Disallow: /*.jsa
+Disallow: /*.json
+Disallow: /*.jsp
+Disallow: /*.log
+Disallow: /*.mdb
+Disallow: /*.nsf
+Disallow: /*.php
+Disallow: /*.phtml
+Disallow: /*.pl
+Disallow: /*.reg
+Disallow: /*.sh
+Disallow: /*.shtml
+Disallow: /*.sql
+Disallow: /*.txt
+Disallow: /*.xml
+Disallow: /testingnotes.*
+```
