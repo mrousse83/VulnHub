@@ -94,7 +94,7 @@ Disallow: /*.xml
 Disallow: /testingnotes.*
 ```
 
-Cette dernière ligne semble intéressante.
+Cette dernière ligne me semble intéressante.
 
 En essayant quelques extensions, je trouve rapidement la présence du fichier ```https://terratest.earth.local/testingnotes.txt``` dont voici son contenu :
 ```
@@ -128,11 +128,14 @@ texte_code_ascii = bytes.fromhex(texte_code_hex).decode("ASCII")
 print(texte_code_ascii)
 ```
 
-La chaîne :
-```
-2402111b1a0705070a41000a431a000a0e0a0f04104601164d050f070c0f15540d1018000000000c0c06410f0901420e105c0d074d04181a01041c170d4f4c2c0c13000d430e0e1c0a0006410b420d074d55404645031b18040a03074d181104111b410f000a4c41335d1c1d040f4e070d04521201111f1d4d031d090f010e00471c07001647481a0b412b1217151a531b4304001e151b171a4441020e030741054418100c130b1745081c541c0b0949020211040d1b410f090142030153091b4d150153040714110b174c2c0c13000d441b410f13080d12145c0d0708410f1d014101011a050d0a084d540906090507090242150b141c1d08411e010a0d1b120d110d1d040e1a450c0e410f090407130b5601164d00001749411e151c061e454d0011170c0a080d470a1006055a010600124053360e1f1148040906010e130c00090d4e02130b05015a0b104d0800170c0213000d104c1d050000450f01070b47080318445c090308410f010c12171a48021f49080006091a48001d47514c50445601190108011d451817151a104c080a0e5a
-```
-donne :
+Je récupère la chaîne suivante :
 ```
 earthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimatechangebad4humansearthclimat
 ```
+
+J'essaie de m'identifier avec :
+- Username : terra
+- Password : earthclimatechangebad4humans
+
+Me voilà identifié !
+
