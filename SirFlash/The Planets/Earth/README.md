@@ -108,3 +108,8 @@ Todo:
 *Need to test different key lengths to protect against bruteforce. How long should the key be?
 *Need to improve the interface of the messaging interface and the admin panel, it's currently very basic.
 ```
+
+Le fichier ```https://terratest.earth.local/testdata.txt``` contient :
+```
+According to radiometric dating estimation and other evidence, Earth formed over 4.5 billion years ago. Within the first billion years of Earth's history, life appeared in the oceans and began to affect Earth's atmosphere and surface, leading to the proliferation of anaerobic and, later, aerobic organisms. Some geological evidence indicates that life may have arisen as early as 4.1 billion years ago.
+```
