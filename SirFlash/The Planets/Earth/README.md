@@ -94,7 +94,7 @@ Disallow: /*.xml
 Disallow: /testingnotes.*
 ```
 
-Cette dernière liste semble intéressante.
+Cette dernière ligne semble intéressante.
 
 En essayant quelques extensions, je trouve rapidement la présence du fichier ```https://terratest.earth.local/testingnotes.txt``` dont voici son contenu :
 ```
