@@ -175,3 +175,12 @@ Ensuite j'exécute la commande ```find / -perm -u=s -type f -ls 2>/dev/null``` q
 ```
 
 Le fichier ```/usr/bin/reset_root``` semble être une bonne piste !
+
+Lorsque je l'exécute, j'ai le message suivant :
+```
+CHECKING IF RESET TRIGGERS PRESENT...
+RESET FAILED, ALL TRIGGERS ARE NOT PRESENT.
+```
+
+Je me décide donc à le récupérer pour l'analyser en me plaçant dans le répertoire ```/usr/bin``` et en exécutant la commande suivante : ```python3 -m http.server 8000```
+
