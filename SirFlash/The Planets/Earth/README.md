@@ -139,3 +139,7 @@ J'essaie de m'identifier avec :
 
 Me voilà identifié !
 
+Sur cette nouvelle page, je suis en présence d'un formulaire qui me permet d'exécuter des commandes :
+- whoami => apache
+- id => uid=48(apache) gid=48(apache) groups=48(apache)
+- 
