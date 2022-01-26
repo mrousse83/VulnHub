@@ -138,7 +138,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 97.62 seconds
 ```
 
-Je constate qu'il y a 3 ports ouverts :
+Je constate qu'il y a 2 ports ouverts :
 * 22/tcp (ssh) : OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
 * 8080/tcp (http-proxy) : WSGIServer/0.2 CPython/3.8.2
 
