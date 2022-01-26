@@ -142,3 +142,5 @@ Je constate qu'il y a 2 ports ouverts :
 * 22/tcp (ssh) : OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
 * 8080/tcp (http-proxy) : WSGIServer/0.2 CPython/3.8.2
 
+Avec la commande ```dirb http://192.168.56.103:8080``` je trouve la présence d'un fichier ```robots.txt``` mais celui-ci ne contient rien...
+
