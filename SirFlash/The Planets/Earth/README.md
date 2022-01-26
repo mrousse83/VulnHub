@@ -9,6 +9,7 @@ Sommaire de cet article :
   * [Recherche d'un point d'entrée](#recherche_pe)
     * [Recherche avec nmap](#recherche_nmap)
     * [Analyse du port 80 et 443](#analyse_80_443)
+* [Exploitation](#exploitation)
 
 ## Analyse<a name="analyse"></a>
 Je vais dans un premier temps récupérer l'adresse IP de la machine virtuelle puis analyser celle-ci dans le but de trouver un point d'entrée.
@@ -146,7 +147,7 @@ J'essaie de m'identifier avec :
 
 Me voilà identifié !
 
-## Exploitation
+## Exploitation<a name="exploitation"></a>
 
 Sur cette nouvelle page, je suis en présence d'un formulaire qui me permet d'exécuter des commandes :
 - whoami => apache
