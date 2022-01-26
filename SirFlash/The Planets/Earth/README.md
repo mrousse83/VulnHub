@@ -276,6 +276,6 @@ HMMMMMMMHo                 `MMMMMMMMMT       .
               '`--._,dd###pp=""'
 
 Congratulations on completing Earth!
-If you have any feedback please contact me at SirFlash@protonmail.com
+If you have any feedback please contact me at ********@protonmail.com
 [root_flag_b0da9554d29db2117b02aa8b66ec492e]
 ```
