@@ -247,7 +247,7 @@ CHECKING IF RESET TRIGGERS PRESENT...
 RESET TRIGGERS ARE PRESENT, RESETTING ROOT PASSWORD TO: Earth
 ```
 
-Ensuite, je n'ai plus qu'à me connecter et à chercher le flag :
+Ensuite, je n'ai plus qu'à me connecter avec l'utilisateur ```root``` et à chercher le flag :
 ```
 cat /root/root_flag.txt
 
