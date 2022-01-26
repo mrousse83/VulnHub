@@ -7,6 +7,8 @@ Sommaire de cet article :
 * [Analyse](#analyse)
   * [Recherche de l'adresse IP de la machine virtuelle](#recherche_ip)
   * [Recherche d'un point d'entrée](#recherche_pe)
+    * [Recherche avec nmap](#recherche_nmap)
+    * [Analyse du port 80 et 443](#analyse_80_443)
 
 ## Analyse<a name="analyse"></a>
 Je vais dans un premier temps récupérer l'adresse IP de la machine virtuelle puis analyser celle-ci dans le but de trouver un point d'entrée.
@@ -17,7 +19,7 @@ Pour récupérer l'adresse IP de la machine virtuelle, j'exécute la commande ``
 ### Recherche d'un point d'entrée<a name="recherche_pe"></a>
 Je commence ma recherche afin de trouver un point d'entrée.
 
-#### Recherche avec nmap
+#### Recherche avec nmap<a name="recherche_nmap"></a>
 Je lance une analyse avec la commande ```nmap -e eth1 -A -p- -T4 192.168.56.102``` :
 ```
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-01-22 06:13 EST
@@ -63,7 +65,7 @@ J'ajoute ces deux noms DNS dans mon fichier ```/etc/hosts``` :
 192.168.56.102 earth.local terratest.earth.local
 ```
 
-### Analyse du port 80 et 443
+#### Analyse du port 80 et 443<a name="analyse_80_443"></a>
 Je lance un ```dirb http://earth.local``` et un ```dirb https://earth.local``` qui me permet de trouver la page ```https://earth.local/admin``` qui contient un lien vers la page ```http://earth.local/admin/login```.
 Puis un ```dirb http://terratest.earth.local``` et un ```dirb https://terratest.earth.local``` qui me permet de trouver le fichier ```https://terratest.earth.local/robots.txt``` qui contient :
 ```
