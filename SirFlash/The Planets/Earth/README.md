@@ -3,13 +3,18 @@
 
 Sur cette machine virtuelle décrite comme facile mais un peu plus complexe que Mercury, il faut trouver un flag user et un flag root qui contiennent chacun un hash MD5.
 
-## Analyse
+Sommaire de cet article :
+* [Analyse](#analyse)
+  * [Recherche de l'adresse IP de la machine virtuelle](#recherche_ip)
+  * [Recherche d'un point d'entrée](#recherche_pe)
+
+## Analyse<a name="analyse"></a>
 Je vais dans un premier temps récupérer l'adresse IP de la machine virtuelle puis analyser celle-ci dans le but de trouver un point d'entrée.
 
-### Recherche de l'adresse IP de la machine virtuelle
+### Recherche de l'adresse IP de la machine virtuelle<a name="recherche_ip"></a>
 Pour récupérer l'adresse IP de la machine virtuelle, j'exécute la commande ```sudo netdiscover -i eth1 -r 192.168.56.0/24``` et je récupère son adresse : 192.168.56.102
 
-### Recherche d'un point d'entrée
+### Recherche d'un point d'entrée<a name="recherche_pe"></a>
 Je commence ma recherche afin de trouver un point d'entrée.
 
 #### Recherche avec nmap
