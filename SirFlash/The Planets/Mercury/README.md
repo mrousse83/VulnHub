@@ -155,3 +155,5 @@ Using the URLconf defined in mercury_proj.urls, Django tried these URL patterns,
 The current path, admin, didn't match any of these.
 ```
 
+Je vais donc aller visiter cette page : ```http://192.168.56.103:8080/mercuryfacts/```.
+
