@@ -345,3 +345,18 @@ C'est parti :
 ssh linuxmaster@192.168.56.103
 ```
 
+La commande ```sudo -l``` me donne :
+```
+Matching Defaults entries for linuxmaster on mercury:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User linuxmaster may run the following commands on mercury:
+    (root : root) SETENV: /usr/bin/check_syslog.sh
+```
+
+Je regarde le contenu de ce script via la commande ```cat /usr/bin/check_syslog.sh``` :
+```
+#!/bin/bash
+tail -n 10 /var/log/syslog
+```
+
