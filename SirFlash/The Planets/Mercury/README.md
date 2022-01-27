@@ -365,9 +365,9 @@ Je vais donc remplacer **tail** par **vim** :
 ln -s /usr/bin/vim tail
 ```
 
-Puis j'exécute le script de cette manière (comme j'ai créé le lien symbolique dans mon répertoire local, je remplace le contenu de ma variable d'environnement PATH par celui-ci) :
+Puis j'exécute le script de cette manière (comme j'ai créé le lien symbolique dans mon répertoire local, je place celui-ci en premier dans la variable d'environnement PATH) :
 ```
-sudo PATH=$PWD /usr/bin/check_syslog.sh
+sudo PATH=$PWD:$PATH /usr/bin/check_syslog.sh
 ```
 
 Me voilà donc dans **vim** en root, je n'ai plus qu'à lancer un bash avec la commande suivante :
