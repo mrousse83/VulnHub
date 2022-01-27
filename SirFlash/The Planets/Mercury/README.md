@@ -370,3 +370,7 @@ Puis j'exécute le script de cette manière (comme j'ai créé le lien symboliqu
 sudo PATH=$PWD /usr/bin/check_syslog.sh
 ```
 
+Me voilà donc dans **vim** en root, je n'ai plus qu'à lancer un bash avec la commande suivante :
+```
+:!/usr/bin/bash
+```
