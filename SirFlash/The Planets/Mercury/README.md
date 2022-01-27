@@ -157,3 +157,7 @@ The current path, admin, didn't match any of these.
 
 Je vais donc aller visiter cette page : ```http://192.168.56.103:8080/mercuryfacts/```.
 
+J'essaie à nouveau d'accéder à une éventuelle page d'administration : ```http://192.168.56.103:8080/mercuryfacts/admin/```.
+
+Je tombe à nouveau sur une page d'erreur riche en information dont : ```(1054, "Unknown column 'admin' in 'where clause'")``` et ```cursor.execute('SELECT fact FROM facts WHERE id = ' + fact_id)```
+
