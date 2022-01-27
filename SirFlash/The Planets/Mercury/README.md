@@ -279,6 +279,23 @@ Table: users
 
 C'est avec le dernier compte que j'arrive à me connecter en SSH : ```ssh webmaster@192.168.56.103```
 
-
 ## Exploitation<a name="exploitation"></a>
 
+Le flag utilisateur est rapidement trouvé :
+```
+webmaster@mercury:~$ ls -al
+total 36
+drwx------ 4 webmaster webmaster 4096 Sep  2  2020 .
+drwxr-xr-x 5 root      root      4096 Aug 28  2020 ..
+lrwxrwxrwx 1 webmaster webmaster    9 Sep  1  2020 .bash_history -> /dev/null
+-rw-r--r-- 1 webmaster webmaster  220 Aug 27  2020 .bash_logout
+-rw-r--r-- 1 webmaster webmaster 3771 Aug 27  2020 .bashrc
+drwx------ 2 webmaster webmaster 4096 Aug 27  2020 .cache
+drwxrwxr-x 5 webmaster webmaster 4096 Aug 28  2020 mercury_proj
+-rw-r--r-- 1 webmaster webmaster  807 Aug 27  2020 .profile
+-rw-rw-r-- 1 webmaster webmaster   75 Sep  1  2020 .selected_editor
+-rw------- 1 webmaster webmaster   45 Sep  1  2020 user_flag.txt
+webmaster@mercury:~$ cat user_flag.txt 
+[user_flag_8339915c9a454657bd60ee58776f4ccd]
+webmaster@mercury:~$ 
+```
