@@ -332,11 +332,16 @@ webmaster for web stuff - webmaster:bWVyY3VyeWlzdGhlc2l6ZW9mMC4wNTZFYXJ0aHMK
 linuxmaster for linux stuff - linuxmaster:bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==
 ```
 
-L'aspect fait penser à du *base64*, c'est parti :
+L'aspect fait penser à du *base64*, essayons :
 ```
 webmaster@mercury:~/mercury_proj$ echo "bWVyY3VyeWlzdGhlc2l6ZW9mMC4wNTZFYXJ0aHMK" | base64 -d
 mercuryisthesizeof0.056Earths
 webmaster@mercury:~/mercury_proj$ echo "bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==" | base64 -d
 mercurymeandiameteris4880km
+```
+
+C'est parti :
+```
+ssh linuxmaster@192.168.56.103
 ```
 
