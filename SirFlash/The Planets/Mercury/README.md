@@ -144,3 +144,14 @@ Je constate qu'il y a 2 ports ouverts :
 
 Avec la commande ```dirb http://192.168.56.103:8080``` je trouve la présence d'un fichier ```robots.txt``` mais celui-ci ne contient rien...
 
+En voulant visiter l'adresse ```http://192.168.56.103:8080/admin```, j'arrive sur une page d'erreur me donnant des informations intéressantes :
+```
+Using the URLconf defined in mercury_proj.urls, Django tried these URL patterns, in this order:
+
+    [name='index']
+    robots.txt [name='robots']
+    mercuryfacts/
+
+The current path, admin, didn't match any of these.
+```
+
