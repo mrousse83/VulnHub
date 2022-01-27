@@ -7,6 +7,8 @@ Sommaire de cet article :
   * [Recherche de l'adresse IP de la machine virtuelle](#recherche_ip)
   * [Recherche d'un point d'entrée](#recherche_pe)
     * [Recherche avec nmap](#recherche_nmap)
+    * [Analyse du port 8080](#analyse_8080)
+* [Exploitation](#exploitation)
 
 ## Analyse<a name="analyse"></a>
 Je vais dans un premier temps récupérer l'adresse IP de la machine virtuelle puis analyser celle-ci dans le but de trouver un point d'entrée.
@@ -142,6 +144,8 @@ Je constate qu'il y a 2 ports ouverts :
 * 22/tcp (ssh) : OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
 * 8080/tcp (http-proxy) : WSGIServer/0.2 CPython/3.8.2
 
+#### Analyse du port 8080<a name="analyse_8080"></a>
+
 Avec la commande ```dirb http://192.168.56.103:8080``` je trouve la présence d'un fichier ```robots.txt``` mais celui-ci ne contient rien...
 
 En voulant visiter l'adresse ```http://192.168.56.103:8080/admin```, j'arrive sur une page d'erreur me donnant des informations intéressantes :
@@ -274,4 +278,7 @@ Table: users
 ```
 
 C'est avec le dernier compte que j'arrive à me connecter en SSH : ```ssh webmaster@192.168.56.103```
+
+
+## Exploitation<a name="exploitation"></a>
 
