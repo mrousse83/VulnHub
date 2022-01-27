@@ -161,3 +161,7 @@ J'essaie à nouveau d'accéder à une éventuelle page d'administration : ```htt
 
 Je tombe à nouveau sur une page d'erreur riche en information dont : ```(1054, "Unknown column 'admin' in 'where clause'")``` et ```cursor.execute('SELECT fact FROM facts WHERE id = ' + fact_id)```
 
+Je pense que je suis en présence d'une possible faille d'injection SQL via cette adresse : ```http://192.168.56.103:8080/mercuryfacts/1/```
+
+Je lance donc une recherche en ce sens : ```http://192.168.56.103:8080/mercuryfacts/1```
+
