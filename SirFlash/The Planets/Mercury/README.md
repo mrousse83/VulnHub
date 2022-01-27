@@ -299,3 +299,44 @@ webmaster@mercury:~$ cat user_flag.txt
 [user_flag_8339915c9a454657bd60ee58776f4ccd]
 webmaster@mercury:~$ 
 ```
+
+Je trouve rapidement un fichier qui contient le mot de passe crypté de l'utilisateur **linuxmaster** :
+```
+webmaster@mercury:~$ ls -al
+total 40
+drwx------ 5 webmaster webmaster 4096 Jan 27 17:03 .
+drwxr-xr-x 5 root      root      4096 Aug 28  2020 ..
+lrwxrwxrwx 1 webmaster webmaster    9 Sep  1  2020 .bash_history -> /dev/null
+-rw-r--r-- 1 webmaster webmaster  220 Aug 27  2020 .bash_logout
+-rw-r--r-- 1 webmaster webmaster 3771 Aug 27  2020 .bashrc
+drwx------ 2 webmaster webmaster 4096 Aug 27  2020 .cache
+drwx------ 3 webmaster webmaster 4096 Jan 27 17:03 .gnupg
+drwxrwxr-x 5 webmaster webmaster 4096 Aug 28  2020 mercury_proj
+-rw-r--r-- 1 webmaster webmaster  807 Aug 27  2020 .profile
+-rw-rw-r-- 1 webmaster webmaster   75 Sep  1  2020 .selected_editor
+-rw------- 1 webmaster webmaster   45 Sep  1  2020 user_flag.txt
+webmaster@mercury:~$ cd mercury_proj/
+webmaster@mercury:~/mercury_proj$ ls -al
+total 28
+drwxrwxr-x 5 webmaster webmaster 4096 Aug 28  2020 .
+drwx------ 5 webmaster webmaster 4096 Jan 27 17:03 ..
+-rw-r--r-- 1 webmaster webmaster    0 Aug 27  2020 db.sqlite3
+-rwxr-xr-x 1 webmaster webmaster  668 Aug 27  2020 manage.py
+drwxrwxr-x 6 webmaster webmaster 4096 Sep  1  2020 mercury_facts
+drwxrwxr-x 4 webmaster webmaster 4096 Aug 28  2020 mercury_index
+drwxrwxr-x 3 webmaster webmaster 4096 Aug 28  2020 mercury_proj
+-rw------- 1 webmaster webmaster  196 Aug 28  2020 notes.txt
+webmaster@mercury:~/mercury_proj$ cat notes.txt 
+Project accounts (both restricted):
+webmaster for web stuff - webmaster:bWVyY3VyeWlzdGhlc2l6ZW9mMC4wNTZFYXJ0aHMK
+linuxmaster for linux stuff - linuxmaster:bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==
+```
+
+L'aspect fait penser à du *base64*, c'est parti :
+```
+webmaster@mercury:~/mercury_proj$ echo "bWVyY3VyeWlzdGhlc2l6ZW9mMC4wNTZFYXJ0aHMK" | base64 -d
+mercuryisthesizeof0.056Earths
+webmaster@mercury:~/mercury_proj$ echo "bWVyY3VyeW1lYW5kaWFtZXRlcmlzNDg4MGttCg==" | base64 -d
+mercurymeandiameteris4880km
+```
+
