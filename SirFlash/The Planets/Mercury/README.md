@@ -360,17 +360,17 @@ Je regarde le contenu de ce script via la commande ```cat /usr/bin/check_syslog.
 tail -n 10 /var/log/syslog
 ```
 
-Je vais donc remplacer **tail** par **vim** :
+Je vais donc créer, dans mon répertoire local, un lien symbolique vers **vim** que j'appelle **tail** :
 ```
 ln -s /usr/bin/vim tail
 ```
 
-Puis j'exécute le script de cette manière (comme j'ai créé le lien symbolique dans mon répertoire local, je place celui-ci en premier dans la variable d'environnement PATH) :
+Puis j'exécute le script de cette manière (comme j'ai créé le lien symbolique dans mon répertoire local, je place celui-ci en premier dans la variable d'environnement PATH pour qu'il exécute mon tail et non celui du système) :
 ```
 sudo PATH=$PWD:$PATH /usr/bin/check_syslog.sh
 ```
 
-Me voilà donc dans **vim** en root, je n'ai plus qu'à lancer un bash avec la commande suivante :
+Me voilà donc dans **vim** en *root*, je n'ai plus qu'à lancer un bash avec la commande suivante :
 ```
 :!/usr/bin/bash
 ```
