@@ -54,3 +54,12 @@ wpscan --url http://192.168.7.96/wordpress/ -e u
 
 Il ne contient pas de faille mais j'ai récupéré le nom d'utilisateur : noobbox  
 
+Je vais essayer de trouver des fichiers cachés :
+```
+dirb http://192.168.7.96 -X .php,.html,.bak,.png,.jpg
+
++ http://192.168.7.96/img.jpg (CODE:200|SIZE:4811)
+```
+
+Dans cette image, je trouve la chaîne de caractères suivante : 5p4c3
+
