@@ -32,3 +32,25 @@ PORT   STATE    SERVICE VERSION
 |_http-server-header: Apache/2.4.38 (Debian)
 ```
 Le point d'entrée sera donc le port 80.
+
+Je visite le site web, il s'agit de la page par défaut d'Apache 2.
+
+Je cherche ensuite s'il n'y a pas des répertoires cachés :
+```
+dirb http://192.168.7.96
+
+==> DIRECTORY: http://192.168.7.96/wordpress/
+```
+
+Je découvre qu'il y a un site WordPress, son contenu ne contient rien d'intéressant.  
+Je recherche s'il contient une faille :
+```
+wpscan --url http://192.168.7.96/wordpress/ -e u
+
+[+] noobbox
+ | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ | Confirmed By: Login Error Messages (Aggressive Detection)
+```
+
+Il ne contient pas de faille mais j'ai récupéré le nom d'utilisateur : noobbox  
+
