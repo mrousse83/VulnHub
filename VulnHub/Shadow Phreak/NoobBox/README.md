@@ -71,6 +71,10 @@ Pour contourner le problème, j'utilise Burp Suite et je remplace en temps réel
 
 ![](https://github.com/mrousse83/VulnHub/raw/main/VulnHub/Shadow%20Phreak/NoobBox/burp.png)
 
+# Exploitation
+
+## Mise en place d'un reverse shell
+
 Une fois connecté sur l'interface d'administration de WordPress, je modifie la page d'erreur `404.php`, je remplace son contenu par mon reverse shell :
 ```
 <html>
