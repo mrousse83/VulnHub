@@ -67,7 +67,7 @@ Je me connecte au site à l'adresse suivante : http://192.168.7.96/wordpress/wp-
 
 Je me rends vite compte que le site utilise l'adresse IP `192.168.43.162` dans tous les liens.
 
-Pour contourner le problème, j'utilise Burp Suite et je remplace en temps réel cet adresse IP par celle de ma VM :
+Pour contourner le problème, j'utilise Burp Suite et je remplace en temps réel cette adresse IP par celle de ma VM :
 
 ![](https://github.com/mrousse83/VulnHub/raw/main/VulnHub/Shadow%20Phreak/NoobBox/burp.png)
 
