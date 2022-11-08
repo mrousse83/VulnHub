@@ -73,9 +73,9 @@ Pour contourner le problème, j'utilise Burp Suite et je remplace en temps réel
 
 # Exploitation
 
-## Mise en place d'un reverse shell
+## Mise en place d'un web shell
 
-Une fois connecté sur l'interface d'administration de WordPress, je modifie la page d'erreur `404.php`, je remplace son contenu par mon reverse shell :
+Une fois connecté sur l'interface d'administration de WordPress, je modifie la page d'erreur `404.php`, je remplace son contenu par mon web shell :
 ```
 <html>
 <body>
