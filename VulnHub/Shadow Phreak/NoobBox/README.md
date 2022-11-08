@@ -71,7 +71,7 @@ Pour contourner le problème, j'utilise Burp Suite et je remplace en temps réel
 
 ![](https://github.com/mrousse83/VulnHub/raw/main/VulnHub/Shadow%20Phreak/NoobBox/burp.png)
 
-Une fois connecté surl'interface d'administration de WordPress, je modifie la page d'erreur `404.php`, je remplace son contenu par mon reverse shell :
+Une fois connecté sur l'interface d'administration de WordPress, je modifie la page d'erreur `404.php`, je remplace son contenu par mon reverse shell :
 ```
 <html>
 <body>
@@ -88,5 +88,10 @@ Une fois connecté surl'interface d'administration de WordPress, je modifie la p
 ?>
 ```
 
-Ensuite, je visite le site en chargeant une page qui n'existe pas afin d'obtenir mon reverse shell.  
+Ensuite, je visite le site en chargeant une page qui n'existe pas afin de faire exécuter ce code.  
+
+J'obtiens mon flag avec la commande suivante : `cat ../../../../home/noobbox/user.txt`
+```
+USER FLAG : {e7028891afea8df6164a35880cc7e2e5}
+```
 
