@@ -110,6 +110,13 @@ Je regarde avec quel utilisateur je suis connecté `id` :
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
+Je me connecte à l'utilisateur `noobbox` : `su - noobbox`
+
+Je regarde à quel groupe appartient cet utilisateur : `id`
+```
+uid=1000(noobbox) gid=1000(noobbox) groups=1000(noobbox),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth)
+```
+
 Ensuite, je récupère le script LinPEAS :
 ```
 cd /tmp
